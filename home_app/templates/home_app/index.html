@@ -1,0 +1,192 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>باکس ریسپانسیو تعرفه قیمت </title>
+	<link type="text/css" href="{% static 'css/style.css' %}" rel="stylesheet" />
+</head>
+<body>
+	<div class="pricing-container">
+		<div class="pricing-switcher">
+			<p class="fieldset">
+				<input type="radio" name="duration-1" value="monthly" id="monthly-1" checked>
+				<label for="monthly-1">ماهانه</label>
+				<input type="radio" name="duration-1" value="yearly" id="yearly-1">
+				<label for="yearly-1">سالانه</label>
+				<span class="switch"></span>
+			</p>
+		</div>
+		<ul class="pricing-list bounce-invert">
+			<li>
+				<ul class="pricing-wrapper">
+					<li data-type="monthly" class="is-visible">
+
+						<header class="pricing-header">
+							<h2>مبتدی</h2>
+                            {% for plan_a in plan_a %}
+							<div class="price">
+								<span class="duration">ماهانه</span>
+								<span class="value">{{ plan_a.price_monthly }}</span>
+								<span class="currency">تومان</span>
+							</div>
+						</header>
+
+						<div class="pricing-body">
+							<ul class="pricing-features">
+								<li>{{ plan_a.email }} </li>
+								<li> {{ plan_a.frame }} </li>
+								<li> {{ plan_a.prodc }} </li>
+								<li>{{ plan_a.imgforpro }} </li>
+								<li> {{ plan_a.Bandwidth}} </li>
+								<li> {{ plan_a.support }} </li>
+							</ul>
+						</div>
+
+						<footer class="pricing-footer">
+							<a class="select" href="#">خرید</a>
+						</footer>
+					</li>
+
+					<li data-type="yearly" class="is-hidden">
+						<header class="pricing-header">
+							<h2>مبتدی</h2>
+							<div class="price">
+								<span class="duration">سالانه</span>
+								<span class="value">{{ plan_a.price_yearly }}</span>
+								<span class="currency">تومان</span>
+							</div>
+						</header>
+						<div class="pricing-body">
+							<ul class="pricing-features">
+								<li>< {{ plan_a.email}} </li>
+								<li> {{ plan_a.frame }} </li>
+								<li>{{plan_a.prodc}}</li>
+								<li> {{plan_a.imgforpro}} </li>
+								<li> {{ plan_a.Bandwidth }} </li>
+								<li> {{ plan_a.support }} </li>
+							</ul>
+						</div>
+                        {% endfor %}
+						<footer class="pricing-footer">
+							<a class="select" href="#">خرید</a>
+						</footer>
+					</li>
+				</ul>
+			</li>
+			<li class="exclusive">
+				<ul class="pricing-wrapper">
+					<li data-type="monthly" class="is-visible">
+						<header class="pricing-header">
+							<h2>انحصاری</h2>
+                            {% for plan_b in plan_b %}
+
+							<div class="price">
+								<span class="duration">ماهانه</span>
+								<span class="value">{{ plan_b.price_monthly }}</span>
+								<span class="currency">تومان</span>
+							</div>
+						</header>
+						<div class="pricing-body">
+							<ul class="pricing-features">
+								<li> {{ plan_b.email }} </li>
+								<li>{{ plan_b.frame }} </li>
+								<li>{{ plan_b.prodc }}</li>
+								<li>{{ plan_b.imgforpro }} </li>
+								<li> {{ plan_b.Bandwidth }} </li>
+								<li>{{ plan_b.support }} </li>
+							</ul>
+						</div>
+						<footer class="pricing-footer">
+							<a class="select" href="#">خرید</a>
+						</footer>
+					</li>
+					<li data-type="yearly" class="is-hidden">
+						<header class="pricing-header">
+							<h2>انحصاری</h2>
+							<div class="price">
+								<span class="duration">سالانه</span>
+								<span class="value">{{ plan_b.price_yearly }}</span>
+								<span class="currency">تومان</span>
+							</div>
+						</header>
+						<div class="pricing-body">
+							<ul class="pricing-features">
+								<li> {{ plan_b.email }} </li>
+								<li> {{ plan_b.frame }} </li>
+								<li>{{ plan_b.prodc }}</li>
+								<li> {{ plan_b.imgforpro }} </li>
+								<li> {{ plan_b.Bandwidth }} </li>
+								<li> {{ plan_b.support }} </li>
+							</ul>
+						</div>
+                        {% endfor %}
+						<footer class="pricing-footer">
+							<a class="select" href="#">خرید</a>
+						</footer>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<ul class="pricing-wrapper">
+					<li data-type="monthly" class="is-visible">
+						<header class="pricing-header">
+							<h2>نرم افزار</h2>
+                            {% for plan_c in plan_c %}
+							<div class="price">
+								<span class="duration">ماهانه</span>
+								<span class="value">{{ plan_c.price_monthly}}</span>
+								<span class="currency">تومان</span>
+							</div>
+						</header>
+						<div class="pricing-body">
+							<ul class="pricing-features">
+								<li>{{ plan_c.email}} </li>
+								<li> {{ plan_c.frame }} </li>
+								<li>{{ plan_c.prodc }}</li>
+								<li>{{ plan_c.imgforpro }}</li>
+								<li>{{ plan_c.Bandwidth }}</li>
+								<li>{{ plan_c.support }}</li>
+							</ul>
+						</div>
+
+						<footer class="pricing-footer">
+							<a class="select" href="#">خرید</a>
+						</footer>
+					</li>
+					<li data-type="yearly" class="is-hidden">
+						<header class="pricing-header">
+							<h2>نرم افزار</h2>
+							<div class="price">
+								<span class="duration">ماهانه</span>
+								<span class="value">{{ plan_c.price_yearly }}</span>
+								<span class="currency">تومان</span>
+							</div>
+						</header>
+						<div class="pricing-body">
+							<ul class="pricing-features">
+								<li> {{ plan_c.email }}</li>
+								<li>{{ plan_c.frame }}</li>
+								<li>{{ plan_c.prodc }} </li>
+								<li>{{ plan_c.imgforpro }} </li>
+								<li>{{ plan_c.Bandwidth }} </li>
+								<li> {{ plan_c.support }} </li>
+							</ul>
+						</div>
+                        {% endfor %}
+						<footer class="pricing-footer">
+							<a class="select" href="#">خرید</a>
+						</footer>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	<script src="{% static 'js/jquery-3.1.1.min.js' %}"></script>
+	<script src="{% static 'js/modernizr.min.js' %}"></script>
+	<script  src="{% static 'js/scripts.js' %}"></script>
+</body><!-- This template has been downloaded from Webrubik.com -->
+</html>
